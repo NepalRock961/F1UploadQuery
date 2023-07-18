@@ -1,0 +1,380 @@
+select * from (
+SELECT  
+     F.FORACID
+    ,LPAD('0',10)  AS CUST_CR_PREF_PCNT 
+    ,'' AS CUST_DR_PREF_PCNT
+    ,LPAD('0',10) AS ID_CR_PREF_PCNT    
+    ,case when INTEREST_RATE<1 and interest_rate >0 then  LPAD( to_Char(0|| INTEREST_RATE),10)  else 
+    LPAD(TO_CHAR(INTEREST_RATE),10)   end AS ID_DR_PREF_PCNT   
+    ,'V' REPRICING_PLAN   
+    ,'' AS PEG_FREQUENCY_IN_MONTHS
+    ,'' AS PEG_FREQUENCY_IN_DAYS
+    ,'O' AS INT_ROUTE_FLG    
+    ,TO_CHAR('NPR') AS ACCT_CRNCY_CODE        
+    ,TO_CHAR(S.SOL_ID) AS SOL_ID      
+    ,H.GL_SUB_HEAD_CODE AS GL_SUB_HEAD_CODE
+    ,TO_CHAR(H.SCHEME_CODE_NEW) AS SCHM_CODE	
+    ,TO_CHAR(F.CIF_ID)    AS CIF_ID
+    , case when L.ACCT_OPEN_DATE>(select db_stat_date from tbaadm.gct) then to_char((select db_stat_date from tbaadm.gct),'DD-MM-YYYY') 
+    else TO_CHAR(L.ACCT_OPEN_DATE,'DD-MM-YYYY') end AS ACCT_OPN_DATE
+    ,LPAD(LOAN_AMOUNT,17) AS SANCT_LIM    -- Have to change in next mock
+    ,'' AS LEDG_NUM
+    ,'NA' AS SECTOR_CODE
+    ,'999' AS SUB_SECTOR_CODE
+    ,'PERSL'AS PURPOSE_OF_ADVN
+    ,'999'  AS NATURE_OF_ADVN
+    ,'003'   AS FREE_CODE_3
+    ,''     AS SANCT_REF_NUM
+    ,case when L.ACCT_OPEN_DATE>(select db_stat_date from tbaadm.gct) then to_char((select db_stat_date from tbaadm.gct),'DD-MM-YYYY') 
+    else TO_CHAR(L.ACCT_OPEN_DATE,'DD-MM-YYYY') end      AS LIM_SANCT_DATE
+    ,'004'       AS SANCT_LEVL_CODE
+    ,'30-12-2099' AS LIM_EXP_DATE
+    --TO_CHAR(LIMIT_EXP_DATE,'DD-MM-YYYY')      AS LIM_EXP_DATE
+    ,'001'      AS SANCT_AUTH_CODE
+    ,case when L.ACCT_OPEN_DATE>(select db_stat_date from tbaadm.gct) then to_char((select db_stat_date from tbaadm.gct),'DD-MM-YYYY') 
+    else TO_CHAR(L.ACCT_OPEN_DATE,'DD-MM-YYYY') end         AS LOAN_PAPER_DATE
+    ,O.FORACID   AS OP_ACID
+    ,'NPR' AS OP_CRNCY_CODE
+    ,O.SOL_ID  AS OP_SOL_ID
+    ,'E' AS DMD_SATISFY_MTHD
+    ,'Y' AS LIEN_ON_OPER_ACCT_FLG 
+    ,''     AS DS_RATE_CODE
+    ,H.INT_TBL_CODE AS INT_TBL_CODE   
+    ,'Y' AS INT_ON_P_FLG
+    ,'N'    AS PI_ON_PDMD_OVDU_FLG
+    ,'N' AS PDMD_OVDU_EOM_FLG
+    ,'N'  AS INT_ON_IDMD_FLG
+    ,'N'  AS PI_ON_IDMD_OVDU_FLG 
+    ,'N' AS IDMD_OVDU_EOM_FLG
+    ,TO_CHAR((SELECT DB_STAT_DATE+1 FROM TBAADM.GCT),'DD-MM-YYYY')      AS XFER_EFF_DATE
+    ,''AS CUM_NORM_INT_AMT
+    ,'' AS CUM_PEN_INT_AMT
+    ,'' AS CUM_ADDNL_INT_AMT
+    --,lpad(to_number(nvl(PRI_OUTSTANDING_AMT,0))+to_number(nvl(PRI_OVERDUE_AMT,0))+to_number(nvl(INT_OVERDUE_AMT,0))+to_number(nvl(PENAL_AMOUNT,0)),17) AS LIAB_AS_ON_XFER_EFF_DATE
+    ,NVL(to_char(abs(case when   (SELECT SUM(PRINCIPAL_OVERDUES) FROM MIGRATION.OVERDUE_DETAIL WHERE LOAN_NUMBER  = L.LOAN_NUMBER)=0 then '0.01'
+    else LPAD((SELECT SUM(PRINCIPAL_OVERDUES) FROM MIGRATION.OVERDUE_DETAIL WHERE LOAN_NUMBER  = L.LOAN_NUMBER),17) end )  ) ,'0.01') AS  LIAB_AS_ON_XFER_EFF_DATE
+    ,LPAD('0',17) AS REPHASEMENT_PRINCIPAL
+    ,NVL(
+    case when INTEREST_BOOK_UPTO_DATE_DR>(SELECT DB_STAT_DATE FROM TBAADM.GCT) then TO_CHAR((SELECT DB_STAT_DATE FROM TBAADM.GCT),'DD-MM-YYYY')  
+    else TO_CHAR(INTEREST_BOOK_UPTO_DATE_DR,'DD-MM-YYYY') END,TO_CHAR((SELECT DB_STAT_DATE FROM TBAADM.GCT),'DD-MM-YYYY')  )  AS INTEREST_CALC_UPTO_DATE_DR
+    ,case when L.ACCT_OPEN_DATE>(select db_stat_date from tbaadm.gct) then to_char((select db_stat_date from tbaadm.gct),'DD-MM-YYYY') 
+    else TO_CHAR(L.ACCT_OPEN_DATE,'DD-MM-YYYY') end     AS  REP_SHDL_DATE
+    ,TO_CHAR(TENURE_IN_MONTH) AS  REP_PERD_MTHS
+    ,'' AS REP_PERD_DAYS
+	,'N'   AS PD_FLG
+	,''  AS PD_XFER_DATE 
+    ,'' AS PRV_TO_PD_GL_SUB_HEAD_CODE 
+    ,''  AS INT_SUSPENSE_AMT  
+    ,''                                              AS PENAL_INT_SUSPENSE_AMT  
+    ,'N'                                             AS CHRGE_OFF_FLG
+    ,''                                              AS CHRGE_OFF_DATE   
+    ,LPAD('0', 17) AS CHRGE_OFF_PRINCIPAL 
+    ,LPAD('0', 17) AS PENDING_INTEREST
+    ,LPAD('0', 17) AS PRINCIPAL_RECOVERY
+    ,LPAD('0', 17) AS INTEREST_RECOVERY
+    ,'' AS SOURCE_DEAL_CODE
+    ,''  AS DISBURSE_DEAL_CODE
+    ,'N' AS APPLY_LATE_FEE_FLG
+    ,'0' AS LATE_FEE_GRACE_PERD_MNTHS
+    ,'0' AS LATE_FEE_GRACE_PERD_DAYS
+    ,'N' AS UPFRONT_INSTL_COLL
+    ,''  AS NUM_ADVANCE_INSTLMNT
+    ,''  AS UPFRONT_INSTL_AMT
+    ,''  AS DPD_CNTR
+	,nvl(to_char(abs(LPAD((SELECT PRINCIPAL_OVERDUES FROM MIGRATION.OVERDUE_DETAIL WHERE LOAN_NUMBER = L.LOAN_NUMBER AND PREDEM_FOR_PRINCIPAL = 'Predem for Principal'),17))),'0.01') AS SUM_PRINCIPAL_DMD_AMT    
+    ,'N' AS PAYOFF_FLG
+    ,'Y'  AS XCLUDE_FOR_COMB_STMT
+    ,''   AS STMT_CIF_ID
+    ,'000000000000000000000000000000000000000000000' AS XFER_CYCLE_STR
+    ,'' AS BANK_IRR_RATE
+    ,'' AS VALUE_OF_ASSET
+    ,'' AS ACCT_OCCP_CODE
+    ,'' AS BORROWER_CATEGORY_CODE
+    ,'' AS MODE_OF_ADVN
+    ,'' AS TYPE_OF_ADVN
+    ,'' AS GUAR_COVER_CODE
+	,'' AS INDUSTRY_TYPE       
+    ,'' AS FREE_CODE_1  
+    ,''  AS FREE_CODE_2  
+    ,''  AS FREE_CODE_4  
+    ,''  AS FREE_CODE_5  
+    ,''  AS FREE_CODE_6    
+    ,''  AS FREE_CODE_7    
+    ,''  AS FREE_CODE_8    
+    ,''  AS FREE_CODE_9    
+    ,''  AS FREE_CODE_10   
+    ,''  AS ACCT_LOCN_CODE
+    ,''     AS CRFILE_REF_ID
+    ,''     AS DICGC_FEE_PCNT
+    ,''     AS LAST_COMPOUND_DATE
+    ,''     AS DAILY_COMP_INT_FLG
+    ,'N'    AS CALC_OVDU_INT_FLG
+    ,case when L.ACCT_OPEN_DATE>(select db_stat_date from tbaadm.gct) then to_char((select db_stat_date from tbaadm.gct),'DD-MM-YYYY') 
+    else TO_CHAR(L.ACCT_OPEN_DATE,'DD-MM-YYYY') end     AS EI_PERD_START_DATE
+    ,case when LIMIT_EXP_DATE < (
+    case when L.ACCT_OPEN_DATE>(select db_stat_date from tbaadm.gct) then (select db_stat_date from tbaadm.gct)
+    else L.ACCT_OPEN_DATE end   ) then '30-12-2099' 
+    else TO_CHAR(LIMIT_EXP_DATE,'DD-MM-YYYY') end AS EI_PERD_END_DATE
+    ,'' AS IRR_RATE
+    ,'' AS ADV_INT_AMOUNT
+    ,'' AS AMORTIZED_AMOUNT
+    ,'' AS BOOKED_UPTO_DATE_DR
+    ,'' AS ADV_INT_COLL_UPTO_DATE
+    ,'' AS ACCRUAL_RATE
+    ,'' AS INT_RATE_BASED_ON_SANCT_LIM
+    ,'' AS INT_REST_FREQ
+    ,'' AS INT_REST_BASIS
+    ,'O'AS CHRG_ROUTE_FLG
+    ,'Y'AS FINAL_DISB_FLG
+    ,'N'AS AUTO_RESHDL_AFTER_HLDY_PERD
+    ,'' AS TOT_NUM_DEFMNTS
+    ,'' AS NUM_DEFMNT_CURR_SHDL
+    ,'31-12-2099' AS PEG_REVIEW_DATE
+    ,'' AS PI_BASED_ON_OUTSTANDING
+    ,'' AS CHARGE_OFF_TYPE
+    ,'' AS DEF_APPL_INT_RATE_FLG
+    ,'' AS DEF_APPL_INT_RATE
+    ,'' AS DEFERRED_INT_AMT
+    ,'' AS AUTO_RESHDL_NOT_ALLOWED
+    ,'' AS RESHDL_OVERDUE_PRIN
+    ,'' AS RESHDL_OVERDUE_INT
+    ,'N'AS LOAN_TYPE
+    ,'' AS PAYOFF_REASON_CODE
+    ,'' AS REL_DEPOSIT_ACID
+    ,'' AS LAST_AOD_AOS_DATE
+    ,'' AS REFIN_SANCT_DATE
+    ,'' AS REFIN_AMT
+    ,'' AS SBSDY_ACID
+    ,'' AS SBSDY_AGENCY
+    ,'' AS PRIN_SBSDY_CLAIMED_DATE
+    ,'' AS SUBS_ACT_CODE
+    ,'' AS AOD_AOS_TYPE
+    ,'' AS REFIN_SANCT_NUM
+    ,'' AS REFIN_REF_NUM
+    ,'' AS REFIN_AVLD_DATE
+    ,'' AS PRIN_SBSDY_AMT
+    ,'' AS PRIN_SBSDY_RCVD_DATE
+    ,'' AS PRE_PROCESS_FEE
+    ,'' AS ACT_CODE
+    ,'' AS PROBATION_PRD_MTHS
+    ,'' AS PROBATION_PRD_DAYS
+    ,'' AS COMP_DATE_FLG
+    ,'' AS DISC_RATE_FLG
+    ,'Y'AS INT_COLL_FLG
+    ,'N'AS PS_DESPATCH_MODE
+    ,'' AS ACCT_MGR_USER_ID
+    ,'' AS MODE_OF_OPER_CODE
+    ,'' AS PS_FREQ_TYPE
+    ,'' AS PS_FREQ_WEEK_NUM
+    ,'' AS PS_FREQ_WEEK_DAY
+    ,'' AS PS_FREQ_START_DD
+    ,'' AS PS_FREQ_HLDY_STAT
+    ,'N' AS PB_PS_CODE
+    ,''  AS PS_NEXT_DUE_DATE
+    ,''  AS FIXEDTERM_MNTHS
+    ,''  AS FIXEDTERM_YEARS
+    ,''  AS MIN_INT_PCNT_DR	--As per parameter
+    ,'' AS MAX_INT_PCNT_DR	--As per parameter
+    ,'' AS INSTALL_INCOME_RATIO
+    ,'' AS PRODUCT_GROUP		
+    ,'' AS FREE_TEXT
+	,'' AS LINKED_ACCT_ID
+    ,''  AS DELINQ_RESHDL_MTHD_FLG
+    ,''  AS TOTAL_NUM_OF_SWITCHOVER
+    ,''  AS NON_STARTER_FLG
+    ,''  AS FLOAT_INT_TBL_CODE
+    ,''  AS FLOAT_REPRICING_FREQ_MNTHS
+    ,''  AS FLOAT_REPRICING_FREQ_DAYS
+    ,''  AS SINGLEEMI_TENORDIFF_FLG
+    ,''  AS IBAN_NUMBER
+    ,''  AS IAS_CODE
+    ,''  AS TOPUP_ACID
+    ,''  AS TOPUP_TYPE
+    ,'0' AS NEGOTIATED_RATE_DR
+    ,'F' AS PENAL_PROD_MTHD_FLG
+    ,'D' AS PENAL_RATE_MTHD_FLG
+    ,''  AS FULL_PENAL_MTHD_FLG
+    ,''  AS HLDY_PRD_FRM_FIRST_DISB_FLG
+    ,CASE WHEN UPPER(L.schm_code) = '1 MONTH' THEN 'N' ELSE 'Y' END AS EI_SCHM_FLG 
+    ,CASE WHEN UPPER(L.schm_code) = '1 MONTH' THEN '' ELSE 'R' END AS EI_METHOD --CASE WHEN EI_FLG='YES' THEN 'R' ELSE ''
+    ,CASE WHEN upper(L.schm_code) = '1 MONTH' THEN '' ELSE 'P' END AS EI_FORMULA_FLG --CASE WHEN EI_FLG='YES' THEN 'P' ELSE ''
+    ,'' AS NRML_HLDY_PERD_MNTHS
+    ,'' AS HLDY_PERD_INT_FLG
+    ,'' AS HLDY_PERD_INT_AMT
+    ,'' AS RSHDL_TENOR_EI_FLG
+    ,'' AS RSHDL_DISBT_FLG
+    ,'' AS RSHDL_RATE_CHNG_FLG
+    ,'' AS RSHDL_PREPAY_FLG
+    ,'O' AS RSHDL_AMT_FLG
+    ,'N' AS REPHASE_CAPITALIZE_INT
+	,''  AS REPHASE_CARRY_OVDU_DMDS
+    ,'I' AS TYPE_OF_INSTLMNT_COMB
+    ,'N' AS CAP_EMI_FLG                        
+    ,''  AS EMICAP_DEFERRED_INT
+    ,''  AS START_DFMNT_MNTH
+    ,''  AS NUM_MNTHS_DEFERRED
+	,''  AS CHNL_CR_PREF_PCNT
+	,''  AS CHNL_DR_PREF_PCNT
+    ,''  AS CHANNEL_ID
+    ,''  AS CHANNEL_LEVEL_CODE
+    ,''  AS INSTLMNT_GRACE_PERD_TERM_FLG
+	,''  AS INSTLMNT_GRACE_PERD_MNTHS
+	,'N' AS SHIFT_INSTLMNT_FLG
+	,'N' AS INCLUDE_MATU_DATE_FLG      
+    ,''  AS RULE_CODE
+    ,''  AS CUM_CAPITALIZE_FEES
+    ,''  AS UPFRONT_INSTL_INT_AMT
+    ,'' AS RECALL_FLG 
+    ,'' AS RECALL_DATE
+    ,'' AS PS_DIFF_FREQ_REL_PARTY_FLG
+    ,'' AS SWIFT_DIFF_FREQ_REL_PARTY_FLG
+    ,'' AS PENAL_INT_TBL_CODE   
+    ,'' AS PENAL_PREF_PCNT
+    ,'' AS RESP_ACCT_REF_NO
+    ,'' AS INT_VERSION
+    ,'' AS ADD_TYPE --FROM CIF LEVEL
+    ,'' AS PHONE_TYPE --FROM CIF LEVEL
+    ,'' AS EMAIL_TYPE --FROM CIF LEVEL
+    ,'' AS ACCRUED_PENAL_INT_RECOVERY 
+    ,'' AS PENAL_INT_RECOVERY
+    ,'' AS COLL_INT_RECOVERY
+    ,'' AS COLL_PENAL_INT_RECOVERY
+    ,'' AS MARKUP_INT_RATE_APPL_FLG
+    ,'' AS PREFERRED_CAL_BASE
+    ,'' AS PURCHASE_REF
+    ,'' AS FREZ_CODE
+    ,'' AS FREZ_REASON_CODE
+    ,'' AS RL001_232
+    ,'' AS RL001_233
+    ,'' AS RL001_234
+    ,'' AS RL001_235
+    ,'' AS RL001_236
+    ,'' AS RL001_237
+    ,'' AS RL001_238
+    ,'' AS RL001_239
+    ,'' AS RL001_240
+    ,'' AS RL001_241
+    ,'' AS RL001_242
+    ,'' AS RL001_243
+    ,'' AS RL001_244
+    ,'' AS RL001_245
+    ,'' AS RL001_246
+    ,'' AS RL001_247
+    ,'' AS RL001_248
+    ,'' AS RL001_249
+    ,'' AS RL001_250
+    ,'' AS RL001_251
+    ,'' AS RL001_252
+    ,'' AS RL001_253
+    ,'' AS RL001_254
+    ,'' AS RL001_255
+    ,'' AS RL001_256
+    ,'' AS RL001_257
+    ,'' AS RL001_258
+    ,'' AS RL001_259
+    ,'' AS RL001_260
+    ,'' AS RL001_261
+    ,'' AS RL001_262
+    ,'' AS RL001_263
+    ,'' AS RL001_264
+    ,'' AS RL001_265
+    ,'' AS RL001_266
+    ,'' AS RL001_267
+    ,'' AS RL001_268
+    ,'' AS RL001_269
+    ,'' AS RL001_270
+    ,'' AS RL001_271
+    ,'' AS RL001_272
+    ,'' AS RL001_273
+    ,'' AS RL001_274
+    ,'' AS RL001_275
+    ,'' AS RL001_276
+    ,'' AS RL001_277
+    ,'' AS RL001_278
+    ,'' AS RL001_279
+    ,'' AS RL001_280
+    ,'' AS RL001_281
+    ,'' AS RL001_282
+    ,'' AS RL001_283
+    ,'' AS RL001_284
+    ,'' AS RL001_285
+    ,'' AS RL001_286
+    ,'' AS RL001_287
+    ,'' AS RL001_288
+    ,'' AS RL001_289
+    ,'' AS RL001_290
+    ,'' AS RL001_291
+    ,'' AS RL001_292
+    ,'' AS RL001_293
+    ,'' AS RL001_294
+    ,'' AS RL001_295
+    ,'' AS RL001_296
+    ,'' AS RL001_297
+    ,'' AS RL001_298
+    ,'' AS RL001_299
+    ,'' AS RL001_300
+    ,'' AS RL001_301
+    ,'' AS RL001_302
+    ,'' AS RL001_303
+    ,'' AS RL001_304
+    ,'' AS RL001_305
+    ,'' AS RL001_306
+    ,'' AS RL001_307
+    ,'' AS RL001_308
+    ,'' AS RL001_309
+    ,'' AS RL001_310
+    ,'' AS RL001_311
+    ,'' AS RL001_312
+    ,'' AS RL001_313
+    ,'' AS RL001_314
+    ,'' AS RL001_315
+    ,'' AS RL001_316
+    ,'' AS RL001_317
+    ,'' AS RL001_318
+    ,'' AS RL001_319
+    ,'' AS RL001_320
+    ,'' AS RL001_321
+    ,'' AS RL001_322
+    ,'' AS RL001_323
+    ,'' AS RL001_324
+    ,'' AS RL001_325
+    ,'' AS RL001_326
+    ,'' AS RL001_327
+    ,'' AS RL001_328
+    ,'' AS RL001_329
+    ,'' AS RL001_330
+    ,'' AS RL001_331
+    ,'' AS RL001_332
+    ,'' AS RL001_333
+    ,'' AS RL001_334
+    ,'' AS RL001_335
+    ,'' AS RL001_336
+    ,'' AS RL001_337
+    ,'' AS RL001_338
+    ,'' AS RL001_339
+    ,'' AS RL001_340
+    ,'' AS RL001_341
+    ,'' AS RL001_342
+    ,'' AS RL001_343
+    ,'' AS RL001_344
+    ,'' AS RL001_345
+    ,'' AS RL001_346
+    ,'' AS RL001_347
+    ,'' AS RL001_348
+FROM MIGRATION.LOAN_DETAILS L
+JOIN MIGRATION.SOL_MAPPING S ON L.BANK_DETAILS  = S.OLDBANKID
+JOIN MIGRATION.FORACID F ON F.ACCOUNT_NUMBER  = L.LOAN_NUMBER
+JOIN MIGRATION.FORACID O ON O.ACCOUNT_NUMBER  = L.ACCOUNT_NUMBER
+JOIN MIGRATION.SCHEME_MAPPING H ON upper(H.SCHEME_CODE_OLD) = upper(L.SCHM_CODE)  and H.sol_id=f.sol_id
+and F.foracid not in (select foracid from tbaadm.gam)
+)x
+
+/*
+sElect count(*)  
+FROM CUSTOM.LOAN_DETAILS L --31665
+JOIN CUSTOM.SOL_MAPPING S ON L.BANK_DETAILS  = S.OLDBANKID --31338
+JOIN CUSTOM.FORACID F ON F.ACCOUNT_NUMBER  = L.LOAN_NUMBER --31337
+JOIN CUSTOM.FORACID O ON O.ACCOUNT_NUMBER  = L.ACCOUNT_NUMBER
+JOIN CUSTOM.SCHEME_MAPPING H ON upper(H.SCHEME_CODE_OLD) = upper(L.SCHM_CODE)  and H.sol_id=f.sol_id
+*/
+--select * from migration.SCHEME_MAPPING

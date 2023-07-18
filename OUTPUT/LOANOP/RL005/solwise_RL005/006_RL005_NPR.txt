@@ -1,0 +1,120 @@
+TBI0060000237080002NPR006                109.32DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                109.32CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000258010002NPR006                 23.94DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                 23.94CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000259570002NPR006                 10.36DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                 10.36CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000259570002NPR006                 163.2DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                 163.2CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000259570002NPR006                151.36DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                151.36CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000259650002NPR006                 182.4DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                 182.4CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000259650002NPR006                154.53DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                154.53CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000262340002NPR006                 33.21DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                 33.21CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000262340002NPR006                138.44DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                138.44CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000262340002NPR006                175.04DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                175.04CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000262680002NPR006                101.77DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                101.77CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000264120002NPR006                  0.21DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                  0.21CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000264550002NPR006                  5.19DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                  5.19CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000267560002NPR006                179.89DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                179.89CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000268610002NPR006                 160.9DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                 160.9CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000268610002NPR006                 44.59DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                 44.59CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000268610002NPR006                 66.89DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                 66.89CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000268610002NPR006                204.51DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                204.51CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000268610002NPR006                247.45DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                247.45CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000272010002NPR006                 130.4DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                 130.4CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000272010002NPR006                109.53DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                109.53CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000274190002NPR006                  25.2DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                  25.2CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000274190002NPR006                 14.58DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                 14.58CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000274190002NPR006                334.55DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                334.55CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000274540002NPR006                239.04DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                239.04CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000274540002NPR006                288.97DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                288.97CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000280240002NPR006                 213.8DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                 213.8CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000280240002NPR006                 59.31DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                 59.31CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000280240002NPR006                 87.86DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                 87.86CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000280240002NPR006                119.54DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                119.54CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000280240002NPR006                151.03DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                151.03CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000280240002NPR006                183.02DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                183.02CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000280330002NPR006                 84.79DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                 84.79CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000280330002NPR006                124.63DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                124.63CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000280330002NPR006                165.29DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                165.29CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000280330002NPR006                204.75DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                204.75CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000280330002NPR006                240.87DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                240.87CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000280330002NPR006                245.58DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                245.58CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000280640002NPR006                  0.46DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                  0.46CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000280710002NPR006                 25.38DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                 25.38CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000280710002NPR006                124.68DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                124.68CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000282810002NPR006                  0.74DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                  0.74CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000282810002NPR006                  80.7DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                  80.7CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000282810002NPR006                 19.61DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000282810002NPR006                 19.61DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                 19.61CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                 19.61CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000283630002NPR006                 58.89DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                 58.89CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000283630002NPR006                127.98DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                127.98CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000283630002NPR006                195.66DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                195.66CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000283630002NPR006                219.03DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                219.03CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000283630002NPR006                264.98DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                264.98CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000283630002NPR006                330.24DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                330.24CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000284450002NPR006                  6.48DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                  6.48CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000284480002NPR006                 131.3DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                 131.3CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000285240002NPR006                  19.7DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                  19.7CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000285260002NPR006                 59.98DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                 59.98CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000285260002NPR006                141.07DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                141.07CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000285260002NPR006                220.85DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                220.85CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000285580002NPR006                 28.08DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                 28.08CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000285580002NPR006                118.95DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                118.95CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI0060000286650002NPR006                  3.48DI25-08-2022INDEM25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
+TBI03002072524001  NPR006                  3.48CI25-08-2022     25-08-2022NNN  MIGRATION UPLOAD              25-08-2022                                        
